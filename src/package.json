@@ -13,7 +13,7 @@
     "body-parser": "~1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "dotenv": "^16.1.4",
+    "dotenv": "^16.4.5",
     "express": "~4.16.0",
     "express-cluster": "0.0.5",
     "http-errors": "~1.6.2",

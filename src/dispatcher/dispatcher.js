@@ -4,6 +4,8 @@ require('./kafka-dispatcher');
 require('./cassandra-dispatcher');
 require('./clickhouse-dispatcher');
 require('./mysql-dispatcher');
+require('./mongodb-dispatcher');
+
 
 const getData = require('./clickhouse-dispatcher');
 const getCount = require('./clickhouse-dispatcher');
@@ -43,6 +45,10 @@ class Dispatcher {
             console.log("inside mysql")
             this.logger.add(winston.transports.mysql, this.options);
             console.log('mysql transport enabled !!!');
+        }else if (this.options.dispatcher === 'mongodb') {
+          console.log("inside mongodb");
+          this.logger.add(winston.transports.mongodb, this.options);
+          console.log('mongodb transport enabled !!!');
         }else { // Log to console
             console.log("inside else")
             this.options.dispatcher = 'console'
