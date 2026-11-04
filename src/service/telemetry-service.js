@@ -16,7 +16,8 @@ class TelemetryService {
         const url = req.originalUrl;
         const version = url.split('/')[1];
         const message = req.body;
-        if(version === 'v2'){
+        // v2/v3 are auth-guarded: replace the session token with the permanent virtual id
+        if(version === 'v2' || version === 'v3'){
             message.userId = req.user.virtual_id;
         }
         message.version = version;

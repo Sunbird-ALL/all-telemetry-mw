@@ -69,7 +69,7 @@ class MongoDBDispatcher extends winston.Transport {
       // Prepare the array of documents to be inserted
       const documents = message.events.map(event => {
         const pid = event.context.pdata ? event.context.pdata.pid : undefined;
-        if(message.version === 'v2') {
+        if(message.version === 'v2' || message.version === 'v3') {
           event.actor.id = message.userId
           event.context.uid = message.userId
           event.context.cdata = event.context.cdata
